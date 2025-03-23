@@ -17,11 +17,11 @@ export default function HeroSection() {
           className="text-center md:text-left flex-1"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Hey! I&aposm <span className="text-[#a78bfa]">Trey Israel</span>
+            Hey! I&apos;m <span className="text-[#a78bfa]">Trey Israel</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
-            I&aposm a Clemson student looking to grow my coding skills. It&aposs nice to meet you! :)
+            I&apos;m a Clemson student looking to grow my coding skills. It&aposm;s nice to meet you! :)
           </p>
 
           <a

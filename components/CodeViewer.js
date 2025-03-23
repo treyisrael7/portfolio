@@ -11,7 +11,7 @@ const role = "College Student & Developer";
 const whereabouts = "Greenville, South Carolina, USA";
 
 function intro() {
-  return \`Hi, I&aposm Trey! I would love to get to know you more, please feel free to contact me!\`;
+  return \`Hi, I'm Trey! I would love to get to know you more, please feel free to contact me!\`;
 }`,
 
   "education.js": `const education = [
