@@ -68,7 +68,7 @@ export default function ExperienceCarousel() {
         className="mb-12"
       >
         <h2 className="text-4xl sm:text-5xl font-bold text-left tracking-wide mb-2">
-          Here's My Experience!
+          Here&aposs My Experience!
         </h2>
       </motion.div>
 
