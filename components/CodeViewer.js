@@ -49,7 +49,7 @@ export default function CodeViewer() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-left tracking-wide mb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-left tracking-wide mb-2 text-white">
             A Little About Me
           </h2>
           <p className="text-gray-400 mb-10 max-w-md">
