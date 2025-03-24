@@ -40,17 +40,22 @@ export default function CodeViewer() {
 
   return (
     <motion.section
-      id="portfolio"
-      className="py-24 px-6"
+      id="about"
+      className="py-24 px-4 sm:px-6"
       initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center text-white">
-          View My Code
-        </h2>
-
+        <div className="mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-left tracking-wide mb-2">
+            A Little About Me
+          </h2>
+          <p className="text-gray-400 mb-10 max-w-md">
+            Here's a peek into my background, education, and what I love doing in life.
+          </p>
+        </div>
         <div className="flex flex-col md:flex-row overflow-hidden rounded-xl border border-[#3c3c3c] shadow-lg">
           {/* Sidebar */}
           <div className="bg-[#252526] w-full md:w-64 p-5 text-base font-mono border-b md:border-b-0 md:border-r border-[#3c3c3c]">
@@ -75,7 +80,7 @@ export default function CodeViewer() {
           </div>
 
           {/* Code Panel */}
-          <div className="flex-1 bg-[#1e1e1e]">
+          <div className="w-full bg-[#1e1e1e]">
             <div className="flex border-b border-[#3c3c3c] text-sm px-5 py-3">
               <div className="text-white bg-[#2d2d2d] px-4 py-1.5 rounded-t text-sm font-medium">
                 {activeFile}

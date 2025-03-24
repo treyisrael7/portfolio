@@ -25,9 +25,10 @@ export default function ContactSection() {
       viewport={{ once: true }}
     >
       <div className="flex flex-col md:flex-row items-start gap-12">
-        {/* Left: Contact Form */}
         <div className="flex-1 max-w-xl">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">Contact Me!</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-left tracking-wide mb-2">
+            Contact Me
+          </h2>
           <p className="text-gray-400 mb-10 max-w-md">
             Want to get in touch? Send me a message — I’d love to hear from you!
           </p>
@@ -64,31 +65,32 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Right: Images & Caption */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="w-full md:w-[300px] md:ml-auto"
+          className="w-full md:w-[300px] md:ml-auto flex flex-col gap-4"
         >
           <div className="flex flex-col gap-4">
-            <div className="h-[200px] rounded-xl overflow-hidden shadow-lg border border-[#3c3c3c] bg-[#111]">
+            <div className="w-full max-w-[400px] aspect-[4/3] mx-auto rounded-xl overflow-hidden shadow-lg border border-[#3c3c3c] bg-[#111]">
               <Image
-                src="/portfolio%20sunset.jpeg"
+                src="/garden%20portfolio.jpeg"
                 alt="Clemson Sunset 1"
                 width={400}
-                height={500}
+                height={300}
                 className="w-full h-full object-cover"
+                sizes="(max-width: 768px) 90vw, 300px"
               />
             </div>
-            <div className="h-[200px] rounded-xl overflow-hidden shadow-lg border border-[#3c3c3c] bg-[#111]">
+            <div className="w-full max-w-[400px] aspect-[4/3] mx-auto rounded-xl overflow-hidden shadow-lg border border-[#3c3c3c] bg-[#111]">
               <Image
                 src="/portfolio%20tree.jpeg"
                 alt="Clemson Sunset 2"
                 width={400}
-                height={500}
+                height={300}
                 className="w-full h-full object-cover"
+                sizes="(max-width: 768px) 90vw, 300px"
               />
             </div>
           </div>

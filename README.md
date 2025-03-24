@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Trey Israel's Developer Portfolio
 
-## Getting Started
+Welcome to my personal portfolio website — built with **Next.js**, **Tailwind CSS**, and **Framer Motion** — to showcase my projects, experience, and passion for software development.
 
-First, run the development server:
+**Live Site**: [https://treyisrael.com](https://treyisrael.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org) – React framework for fast, modern web apps
+- [Tailwind CSS](https://tailwindcss.com) – Utility-first CSS for styling
+- [Framer Motion](https://www.framer.com/motion/) – Animations and transitions
+- [Vercel](https://vercel.com) – Hosting and deployment platform
+- [React Icons](https://react-icons.github.io/react-icons/) – Icon library
+
+---
+
+## Features
+
+- VS Code-themed "About Me" code viewer
+- Horizontal scrollable **Experience Carousel** with highlight effects
+- Fully responsive design with mobile support
+- Fade-in animations on scroll using Framer Motion
+- Functional contact form using `mailto:` link
+- Polished dark mode design with purple accent theme (`#a78bfa`)
+
+---
+
+## Structure Overview
+
+```
+/app
+  /components      # Reusable UI components (HeroSection, CodeViewer, etc.)
+  /public          # Images and assets
+  page.js          # Main layout of the homepage
+README.md
+tailwind.config.js
+vercel.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Getting Started (Dev Mode)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deployed with [Vercel](https://vercel.com)  
+Every `git push` to `main` triggers a new deployment.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact Me
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Want to collaborate or just say hi?  
+[treyisrael7@gmail.com](mailto:treyisrael7@gmail.com)
+
+---
+
+Thanks for visiting my portfolio!
+```
+
+---

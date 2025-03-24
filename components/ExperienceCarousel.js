@@ -67,9 +67,12 @@ export default function ExperienceCarousel() {
         viewport={{ once: true }}
         className="mb-12"
       >
-        <h2 className="text-4xl sm:text-5xl font-bold text-left tracking-wide mb-2">
-          Here&apos;ms My Experience!
+        <h2 className="text-2xl sm:text-3xl font-bold text-left tracking-wide mb-2">
+          Here&apos;s My Experience
         </h2>
+        <p className="text-gray-400 mb-10 max-w-md">
+          A quick look of some of my favorite projects that have helped me grow.
+        </p>
       </motion.div>
 
       <motion.div
@@ -77,7 +80,7 @@ export default function ExperienceCarousel() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="overflow-x-auto scrollbar-thin scrollbar-thumb-[#a78bfa]/50"
+        className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#a78bfa]/30 hover:scrollbar-thumb-[#a78bfa]/50"
       >
         <div className="flex gap-6 pb-4 pr-4">
           {experiences.map((exp, index) => (
