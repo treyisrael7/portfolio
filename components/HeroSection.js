@@ -33,7 +33,7 @@ export default function HeroSection() {
             Download Resume
           </a>
 
-          <div className="mt-8 scale-110">
+          <div className="mt-8 scale-110 flex justify-center md:justify-start">
             <SocialIcons />
           </div>
         </motion.div>

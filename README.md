@@ -67,6 +67,3 @@ Want to collaborate or just say hi?
 ---
 
 Thanks for visiting my portfolio!
-```
-
----
