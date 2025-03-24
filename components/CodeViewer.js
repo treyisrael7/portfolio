@@ -53,7 +53,7 @@ export default function CodeViewer() {
             A Little About Me
           </h2>
           <p className="text-gray-400 mb-10 max-w-md">
-            Here's a peek into my background, education, and what I love doing in life.
+            Here&apos;s a peek into my background, education, and what I love doing in life.
           </p>
         </div>
         <div className="flex flex-col md:flex-row overflow-hidden rounded-xl border border-[#3c3c3c] shadow-lg">
