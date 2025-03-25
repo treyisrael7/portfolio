@@ -74,17 +74,20 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-gray-300 text-lg sm:text-xl max-w-xl">
-            I&apos;m a Clemson student looking to grow my coding skills.
-            It&apos;s nice to meet you! :)
+            I&apos;m a Clemson Student and Developer, always looking to grow my
+            coding skills. It&apos;s nice to meet you!
           </p>
 
           <a
             href="/Trey Israel Resume.pdf"
             download
-            className="mt-8 scale-110 inline-flex items-center gap-3 px-6 py-3 text-sm sm:text-base bg-[#a78bfa]/10 border border-[#a78bfa] text-white font-semibold rounded-md hover:bg-[#a78bfa] hover:text-black transition-colors duration-200"
+            className="group mt-8 inline-flex items-center gap-3 px-6 py-3 text-sm sm:text-base bg-[#a78bfa]/10 border border-[#a78bfa] text-white font-semibold rounded-md shadow-md hover:bg-[#a78bfa] hover:text-black hover:shadow-lg transition-all duration-300"
           >
-            <FaFileDownload className="text-lg sm:text-xl" />
-            Download Resume
+            <FaFileDownload className="text-lg sm:text-xl transform group-hover:scale-110 group-hover:rotate-[-10deg] transition-transform duration-300" />
+            <span className="relative">
+              Download Resume
+              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300" />
+            </span>
           </a>
 
           <div className="mt-8 scale-110 flex justify-center md:justify-start">
@@ -96,14 +99,14 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
-          className="relative w-[300px] h-[400px] rounded-2xl bg-gradient-to-br from-[#2a9d8f] to-[#e76f51] shadow-2xl group overflow-hidden"
+          className="relative w-[300px] h-[400px] rounded-2xl bg-[#111] border border-[#3c3c3c] shadow-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300"
         >
           <Image
             src="/portfolio%20image.jpeg"
             alt="Trey Israel"
             height={1000}
             width={800}
-            className="relative z-10 w-full h-full object-cover rounded-2xl"
+            className="w-full h-full object-cover"
           />
         </motion.div>
       </div>

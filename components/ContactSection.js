@@ -9,7 +9,7 @@ export default function ContactSection() {
   const [message, setMessage] = useState("");
 
   const handleSend = () => {
-    const mailtoLink = `mailto:your@email.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:treyisraeliii@gmail.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(message)}`;
     window.location.href = mailtoLink;
@@ -33,7 +33,7 @@ export default function ContactSection() {
             Want to get in touch? Send me a message — I’d love to hear from you!
           </p>
 
-          <div className="bg-[#1e1e1e] rounded-lg p-6 shadow-lg border border-[#3c3c3c] w-full">
+          <div className="bg-[#1e1e1e] rounded-xl p-6 shadow-xl border border-[#3c3c3c] w-full">
             <div className="mb-4">
               <label className="block mb-2 text-sm font-medium">Subject</label>
               <input
@@ -41,7 +41,7 @@ export default function ContactSection() {
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 placeholder="What’s this about?"
-                className="w-full p-3 rounded bg-[#2b2b2b] border border-[#3c3c3c] text-white"
+                className="w-full p-3 rounded-md bg-[#2b2b2b] border border-[#3c3c3c] text-white focus:outline-none focus:ring-2 focus:ring-[#a78bfa]/50 transition"
               />
             </div>
 
@@ -52,13 +52,13 @@ export default function ContactSection() {
                 onChange={(e) => setMessage(e.target.value)}
                 rows={5}
                 placeholder="Write your message here..."
-                className="w-full p-3 rounded bg-[#2b2b2b] border border-[#3c3c3c] text-white"
+                className="w-full p-3 rounded-md bg-[#2b2b2b] border border-[#3c3c3c] text-white focus:outline-none focus:ring-2 focus:ring-[#a78bfa]/50 transition"
               />
             </div>
 
             <button
               onClick={handleSend}
-              className="px-6 py-3 bg-[#a78bfa]/10 border border-[#a78bfa] hover:bg-[#a78bfa] text-white font-semibold rounded-md transition"
+              className="w-full px-6 py-3 bg-[#a78bfa]/10 border border-[#a78bfa] text-white font-semibold rounded-md hover:bg-[#a78bfa] hover:text-black hover:shadow-md transition-all duration-300"
             >
               Send Message
             </button>
@@ -70,29 +70,24 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="w-full md:w-[300px] md:ml-auto flex flex-col gap-4"
+          className="w-full md:w-[320px] md:ml-auto flex flex-col gap-4"
         >
-          <div className="flex flex-col gap-4">
-            <div className="w-full max-w-[400px] aspect-[4/3] mx-auto rounded-xl overflow-hidden shadow-lg border border-[#3c3c3c] bg-[#111]">
-              <Image
-                src="/garden%20portfolio.jpeg"
-                alt="Clemson Sunset 1"
-                width={400}
-                height={300}
-                className="w-full h-full object-cover"
-                sizes="(max-width: 768px) 90vw, 300px"
-              />
-            </div>
-            <div className="w-full max-w-[400px] aspect-[4/3] mx-auto rounded-xl overflow-hidden shadow-lg border border-[#3c3c3c] bg-[#111]">
-              <Image
-                src="/portfolio%20tree.jpeg"
-                alt="Clemson Sunset 2"
-                width={400}
-                height={300}
-                className="w-full h-full object-cover"
-                sizes="(max-width: 768px) 90vw, 300px"
-              />
-            </div>
+          <div className="flex flex-col gap-6">
+            {["/garden%20portfolio.jpeg", "/portfolio%20tree.jpeg"].map((src, index) => (
+              <div
+                key={index}
+                className="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#3c3c3c] bg-[#111] hover:scale-[1.02] transition-transform duration-300"
+              >
+                <Image
+                  src={src}
+                  alt={`Nature ${index + 1}`}
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-cover"
+                  sizes="(max-width: 768px) 90vw, 300px"
+                />
+              </div>
+            ))}
           </div>
           <p className="text-sm text-gray-400 mt-3 text-right">
             Any nature pictures are very welcome :)
