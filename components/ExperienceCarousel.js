@@ -1,7 +1,12 @@
 "use client";
 
-import { motion, useTime, useTransform, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import {
+  motion,
+  useTime,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
 
 const experiences = [
   {
@@ -75,11 +80,60 @@ function HoverShimmer() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+      transition={{ duration: 0.4, ease: [0.42, 0, 0.58, 1] }}
       style={{ background: rotatingBg }}
       className="absolute inset-0 p-[2px] rounded-lg pointer-events-none z-10"
     >
       <div className="w-full h-full rounded-md bg-[#1e1e1e]" />
+    </motion.div>
+  );
+}
+
+function ExperienceCard({ exp }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      whileHover={{
+        rotateY: 7,
+        rotateX: -4,
+        scale: 1.06,
+      }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      transition={{
+        type: "spring",
+        stiffness: 200,
+        damping: 15,
+      }}
+      style={{
+        transformStyle: "preserve-3d",
+        willChange: "transform",
+      }}
+      className="group relative min-w-[300px] max-w-[300px] h-[400px] bg-[#1e1e1e] border border-[#3c3c3c] rounded-lg shadow-md flex-shrink-0 flex flex-col justify-between overflow-hidden"
+    >
+      <AnimatePresence>{isHovered && <HoverShimmer />}</AnimatePresence>
+
+      <div className="p-5 flex flex-col gap-6 flex-grow z-20">
+        <div className="space-y-1">
+          <h3 className="text-lg font-semibold leading-snug line-clamp-2">
+            {exp.title}
+          </h3>
+          <p className="text-sm text-gray-400">{exp.date}</p>
+        </div>
+        <p className="text-sm text-gray-200 line-clamp-5">{exp.description}</p>
+      </div>
+
+      <div className="px-5 pb-5 pt-2 border-t border-[#333] flex flex-wrap gap-2 text-xs text-[#a78bfa] font-medium z-20">
+        {exp.tech.map((tech, i) => (
+          <span
+            key={i}
+            className="bg-[#a78bfa]/10 px-3 py-1 rounded-full border border-[#a78bfa]"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
     </motion.div>
   );
 }
@@ -117,60 +171,9 @@ export default function ExperienceCarousel() {
         }}
       >
         <div className="flex gap-6 pb-4">
-          {experiences.map((exp, index) => {
-            const [isHovered, setIsHovered] = useState(false);
-
-            return (
-              <motion.div
-                key={index}
-                whileHover={{
-                  rotateY: 7,
-                  rotateX: -4,
-                  scale: 1.06,
-                }}
-                onHoverStart={() => setIsHovered(true)}
-                onHoverEnd={() => setIsHovered(false)}
-                transition={{
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 15,
-                }}
-                style={{
-                  transformStyle: "preserve-3d",
-                  willChange: "transform",
-                }}
-                className="group relative min-w-[300px] max-w-[300px] h-[400px] bg-[#1e1e1e] border border-[#3c3c3c] rounded-lg shadow-md flex-shrink-0 flex flex-col justify-between overflow-hidden"
-              >
-                <AnimatePresence>
-                  {isHovered && <HoverShimmer />}
-                </AnimatePresence>
-
-                <div className="p-5 flex flex-col gap-6 flex-grow z-20">
-                  <div className="space-y-1">
-                    <h3 className="text-lg font-semibold leading-snug line-clamp-2">
-                      {exp.title}
-                    </h3>
-                    <p className="text-sm text-gray-400">{exp.date}</p>
-                  </div>
-                  <p className="text-sm text-gray-200 line-clamp-5">
-                    {exp.description}
-                  </p>
-                </div>
-
-                <div className="px-5 pb-5 pt-2 border-t border-[#333] flex flex-wrap gap-2 text-xs text-[#a78bfa] font-medium z-20">
-                  {exp.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="bg-[#a78bfa]/10 px-3 py-1 rounded-full border border-[#a78bfa]"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
-
+          {experiences.map((exp, index) => (
+            <ExperienceCard key={index} exp={exp} />
+          ))}
           <div className="min-w-[64px] flex-shrink-0" />
         </div>
       </motion.div>
