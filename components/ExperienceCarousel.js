@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useTime, useTransform, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 const experiences = [
   {
@@ -54,6 +55,35 @@ const experiences = [
   },
 ];
 
+function HoverShimmer() {
+  const time = useTime();
+  const rotate = useTransform(time, [0, 3000], [0, 360], { clamp: false });
+
+  const rotatingBg = useTransform(
+    rotate,
+    (r) =>
+      `conic-gradient(from ${r}deg,
+        transparent 8%,
+        #a78bfa44 20%,
+        #c084fc44 35%,
+        #a78bfa44 50%,
+        transparent 80%)`
+  );
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      style={{ background: rotatingBg }}
+      className="absolute inset-0 p-[2px] rounded-lg pointer-events-none z-10"
+    >
+      <div className="w-full h-full rounded-md bg-[#1e1e1e]" />
+    </motion.div>
+  );
+}
+
 export default function ExperienceCarousel() {
   return (
     <section
@@ -65,13 +95,13 @@ export default function ExperienceCarousel() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="mb-12"
+        className="mb-6 sm:mb-8"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-left tracking-wide mb-2">
           Here&apos;s My Experience
         </h2>
         <p className="text-gray-400 mb-10 max-w-md">
-          A quick look of some of my favorite projects that have helped me grow.
+          A quick look at some of my favorite projects that have helped me grow.
         </p>
       </motion.div>
 
@@ -80,39 +110,68 @@ export default function ExperienceCarousel() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#a78bfa]/30 hover:scrollbar-thumb-[#a78bfa]/50"
+        className="overflow-x-auto overflow-y-visible relative z-10 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#a78bfa]/30 hover:scrollbar-thumb-[#a78bfa]/50"
+        style={{
+          perspective: "1000px",
+          padding: "1rem 1.5rem",
+        }}
       >
-        <div className="flex gap-6 pb-4 pr-4">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              style={{ willChange: "transform" }}
-              className="min-w-[300px] max-w-[300px] h-[400px] bg-[#1e1e1e] border border-[#3c3c3c] rounded-lg shadow-md flex-shrink-0 flex flex-col justify-between transition-transform transform hover:scale-105 hover:shadow-2xl"
-            >
-              <div className="p-5 flex flex-col gap-6 flex-grow">
-                <div className="space-y-1">
-                  <h3 className="text-lg font-semibold leading-snug line-clamp-2">
-                    {exp.title}
-                  </h3>
-                  <p className="text-sm text-gray-400">{exp.date}</p>
-                </div>
-                <p className="text-sm text-gray-200 line-clamp-5">
-                  {exp.description}
-                </p>
-              </div>
+        <div className="flex gap-6 pb-4">
+          {experiences.map((exp, index) => {
+            const [isHovered, setIsHovered] = useState(false);
 
-              <div className="px-5 pb-5 pt-2 border-t border-[#333] flex flex-wrap gap-2 text-xs text-[#a78bfa] font-medium">
-                {exp.tech.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="bg-[#a78bfa]/10 px-3 py-1 rounded-full border border-[#a78bfa]"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            return (
+              <motion.div
+                key={index}
+                whileHover={{
+                  rotateY: 7,
+                  rotateX: -4,
+                  scale: 1.06,
+                }}
+                onHoverStart={() => setIsHovered(true)}
+                onHoverEnd={() => setIsHovered(false)}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 15,
+                }}
+                style={{
+                  transformStyle: "preserve-3d",
+                  willChange: "transform",
+                }}
+                className="group relative min-w-[300px] max-w-[300px] h-[400px] bg-[#1e1e1e] border border-[#3c3c3c] rounded-lg shadow-md flex-shrink-0 flex flex-col justify-between overflow-hidden"
+              >
+                <AnimatePresence>
+                  {isHovered && <HoverShimmer />}
+                </AnimatePresence>
+
+                <div className="p-5 flex flex-col gap-6 flex-grow z-20">
+                  <div className="space-y-1">
+                    <h3 className="text-lg font-semibold leading-snug line-clamp-2">
+                      {exp.title}
+                    </h3>
+                    <p className="text-sm text-gray-400">{exp.date}</p>
+                  </div>
+                  <p className="text-sm text-gray-200 line-clamp-5">
+                    {exp.description}
+                  </p>
+                </div>
+
+                <div className="px-5 pb-5 pt-2 border-t border-[#333] flex flex-wrap gap-2 text-xs text-[#a78bfa] font-medium z-20">
+                  {exp.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="bg-[#a78bfa]/10 px-3 py-1 rounded-full border border-[#a78bfa]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
+
+          <div className="min-w-[64px] flex-shrink-0" />
         </div>
       </motion.div>
     </section>
