@@ -84,7 +84,7 @@ export default function CodeViewer() {
             A Little About Me
           </h2>
           <p className="text-gray-400 mb-10 max-w-md">
-            Here's a peek into my background, education, and what I love doing
+            Here&apos;s a peek into my background, education, and what I love doing
             in life.
           </p>
         </div>
