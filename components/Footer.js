@@ -26,7 +26,7 @@ export default function Footer() {
 
           <div className="flex flex-col items-center gap-4">
             <p className="text-gray-400 text-center max-w-md">
-              Thanks for checking out my website. I'm always excited to connect with new people and explore potential opportunities! 🙌
+              Thanks for checking out my website. I&apos;m always excited to connect with new people and explore potential opportunities! 🙌
             </p>
             <div className="scale-90">
               <SocialIcons />
