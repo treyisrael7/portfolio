@@ -96,7 +96,7 @@ export default function ContactSection() {
             Contact Me
           </h2>
           <p className="text-gray-400 max-w-md">
-            Want to get in touch? Send me a message — I'd love to hear from you!
+            Want to get in touch? Send me a message — I&apos;d love to hear from you!
           </p>
         </motion.div>
 

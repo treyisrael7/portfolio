@@ -15,7 +15,6 @@ import {
 import {
   SiTypescript,
   SiCsharp,
-  SiAzuredevops,
   SiPostman,
   SiJunit5,
   SiNextdotjs,
@@ -32,7 +31,7 @@ const techLogos = {
   "React": FaReact,
   "TypeScript": SiTypescript,
   "C#": SiDotnet,
-  "Azure DevOps": SiAzuredevops,
+  "Azure DevOps": FaCode,
   "Rancher Desktop": SiRancher,
   "Python": SiPython,
   "NLP": FaBrain,
