@@ -15,19 +15,18 @@ export default function ExperienceCarousel() {
     if (!container) return;
 
     const scrollAmount = 340 + 24; // card width + gap
-    const newScrollPosition = container.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
-    
+    const newScrollPosition =
+      container.scrollLeft +
+      (direction === "left" ? -scrollAmount : scrollAmount);
+
     container.scrollTo({
       left: newScrollPosition,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
   return (
-    <section
-      id="experience"
-      className="relative py-24 px-6"
-    >
+    <section id="experience" className="relative py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -41,7 +40,8 @@ export default function ExperienceCarousel() {
             Here&apos;s My Experience
           </h2>
           <p className="text-gray-400 max-w-md">
-            A quick look at some of my favorite projects that have helped me grow.
+            A quick look at some of my favorite projects that have helped me
+            grow.
           </p>
         </motion.div>
 
@@ -61,8 +61,10 @@ export default function ExperienceCarousel() {
               perspective: "1000px",
               padding: "2rem 1.5rem",
               scrollBehavior: "smooth",
-              maskImage: "linear-gradient(to right, transparent, black 2%, black 98%, transparent)",
-              WebkitMaskImage: "linear-gradient(to right, transparent, black 2%, black 98%, transparent)",
+              maskImage:
+                "linear-gradient(to right, transparent, black 2%, black 98%, transparent)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 2%, black 98%, transparent)",
             }}
           >
             <div className="flex gap-6">
@@ -74,12 +76,12 @@ export default function ExperienceCarousel() {
           </div>
 
           <CarouselNav
-            onPrev={() => scroll('left')}
-            onNext={() => scroll('right')}
+            onPrev={() => scroll("left")}
+            onNext={() => scroll("right")}
             show={showNav}
           />
         </motion.div>
       </div>
     </section>
   );
-} 
+}

@@ -26,4 +26,4 @@ export default function FileExplorer({ files, activeFile, onFileSelect }) {
       </ul>
     </div>
   );
-} 
+}

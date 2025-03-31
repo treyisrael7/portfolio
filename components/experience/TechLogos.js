@@ -28,25 +28,25 @@ import {
 import { TbApi } from "react-icons/tb";
 
 const techLogos = {
-  "React": FaReact,
-  "TypeScript": SiTypescript,
+  React: FaReact,
+  TypeScript: SiTypescript,
   "C#": SiDotnet,
   "Azure DevOps": FaCode,
   "Rancher Desktop": SiRancher,
-  "Python": SiPython,
-  "NLP": FaBrain,
+  Python: SiPython,
+  NLP: FaBrain,
   "API Development": TbApi,
   "MetaDrive Simulator": SiOpenaigym,
   "Reinforcement Learning": FaRobot,
   "AWS Lambda": FaAws,
   "API Gateway": FaAws,
-  "Postman": SiPostman,
-  "DynamoDB": FaDatabase,
-  "Java": FaJava,
-  "JUnit": SiJunit5,
+  Postman: SiPostman,
+  DynamoDB: FaDatabase,
+  Java: FaJava,
+  JUnit: SiJunit5,
   "Dynamic Memory": FaDatabase,
-  "JavaScript": FaJs,
-  "CSS": FaCss3Alt,
+  JavaScript: FaJs,
+  CSS: FaCss3Alt,
   "Next.js": SiNextdotjs,
   "Tailwind CSS": SiTailwindcss,
   "Framer Motion": SiFramer,
@@ -57,7 +57,9 @@ export default function TechLogo({ name, small }) {
   const Icon = techLogos[name] || FaCode;
 
   if (small) {
-    return <Icon className="text-lg text-[#a78bfa] group-hover:scale-110 transition-transform duration-200" />;
+    return (
+      <Icon className="text-lg text-[#a78bfa] group-hover:scale-110 transition-transform duration-200" />
+    );
   }
 
   return (
@@ -68,4 +70,4 @@ export default function TechLogo({ name, small }) {
       </div>
     </div>
   );
-} 
+}

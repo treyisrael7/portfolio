@@ -7,13 +7,14 @@ const imageLocations = [
   {
     src: "/garden%20portfolio.jpeg",
     location: "Brookgreen Gardens",
-    description: "The prettiest botanical garden I've ever had the pleasure of visiting"
+    description:
+      "The prettiest botanical garden I've ever had the pleasure of visiting",
   },
   {
     src: "/portfolio%20tree.jpeg",
     location: "Edisto Beach State Park",
-    description: "A walk down the beach where trees come out of the ocean"
-  }
+    description: "A walk down the beach where trees come out of the ocean",
+  },
 ];
 
 const NatureImages = () => {
@@ -58,4 +59,4 @@ const NatureImages = () => {
   );
 };
 
-export default NatureImages; 
+export default NatureImages;

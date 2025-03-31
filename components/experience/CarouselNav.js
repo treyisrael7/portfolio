@@ -28,4 +28,4 @@ export default function CarouselNav({ onPrev, onNext, show }) {
       </motion.button>
     </>
   );
-} 
+}

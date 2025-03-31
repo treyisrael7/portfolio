@@ -15,7 +15,7 @@ export default function Footer() {
     >
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="flex flex-col items-center gap-8">
-          <motion.div 
+          <motion.div
             className="flex items-center gap-2 text-2xl font-bold text-white hover:text-[#a78bfa] transition duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -26,7 +26,8 @@ export default function Footer() {
 
           <div className="flex flex-col items-center gap-4">
             <p className="text-gray-400 text-center max-w-md">
-              Thanks for checking out my website. I&apos;m always excited to connect with new people and explore potential opportunities! 🙌
+              Thanks for checking out my website. I&apos;m always excited to
+              connect with new people and explore potential opportunities! 🙌
             </p>
             <div className="scale-90">
               <SocialIcons />
@@ -34,21 +35,21 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-6 text-sm text-gray-500">
-            <motion.a 
+            <motion.a
               href="#about"
               className="hover:text-[#a78bfa] transition-colors"
               whileHover={{ y: -2 }}
             >
               About
             </motion.a>
-            <motion.a 
+            <motion.a
               href="#experience"
               className="hover:text-[#a78bfa] transition-colors"
               whileHover={{ y: -2 }}
             >
               Experience
             </motion.a>
-            <motion.a 
+            <motion.a
               href="#contact"
               className="hover:text-[#a78bfa] transition-colors"
               whileHover={{ y: -2 }}

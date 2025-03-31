@@ -52,4 +52,4 @@ export default function CodeEditor({ activeFile, files }) {
       </AnimatePresence>
     </div>
   );
-} 
+}

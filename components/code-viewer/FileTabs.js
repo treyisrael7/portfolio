@@ -1,6 +1,11 @@
 "use client";
 
-export default function FileTabs({ openFiles, activeFile, onFileSelect, onFileClose }) {
+export default function FileTabs({
+  openFiles,
+  activeFile,
+  onFileSelect,
+  onFileClose,
+}) {
   return (
     <div className="flex border-b border-[#3c3c3c] text-sm overflow-x-auto">
       {openFiles.map((file) => (
@@ -28,4 +33,4 @@ export default function FileTabs({ openFiles, activeFile, onFileSelect, onFileCl
       ))}
     </div>
   );
-} 
+}

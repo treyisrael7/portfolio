@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from '@emailjs/browser';
-import ContactForm from './ContactForm';
-import NatureImages from './NatureImages';
+import emailjs from "@emailjs/browser";
+import ContactForm from "./ContactForm";
+import NatureImages from "./NatureImages";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -37,9 +37,9 @@ export default function ContactSection() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: "" }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
@@ -52,17 +52,13 @@ export default function ContactSection() {
     try {
       emailjs.init("99p9RacL7Km7Ima27");
 
-      await emailjs.send(
-        "service_is4iwua",
-        "template_vg0o34f",
-        {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          title: "New Portfolio Contact",
-          time: new Date().toLocaleString(),
-        }
-      );
+      await emailjs.send("service_is4iwua", "template_vg0o34f", {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        title: "New Portfolio Contact",
+        time: new Date().toLocaleString(),
+      });
 
       setSubmitStatus("success");
       setFormData({ name: "", email: "", message: "" });
@@ -96,12 +92,13 @@ export default function ContactSection() {
             Contact Me
           </h2>
           <p className="text-gray-400 max-w-md">
-            Want to get in touch? Send me a message — I&apos;d love to hear from you!
+            Want to get in touch? Send me a message — I&apos;d love to hear from
+            you!
           </p>
         </motion.div>
 
         <div className="flex flex-col md:flex-row items-start justify-between gap-12">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -123,4 +120,4 @@ export default function ContactSection() {
       </div>
     </motion.section>
   );
-} 
+}

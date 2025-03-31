@@ -1,6 +1,13 @@
 "use client";
 
-const ContactForm = ({ formData, errors, isLoading, submitStatus, handleChange, handleSend }) => (
+const ContactForm = ({
+  formData,
+  errors,
+  isLoading,
+  submitStatus,
+  handleChange,
+  handleSend,
+}) => (
   <div className="bg-[#1e1e1e] rounded-xl p-6 shadow-xl border border-[#3c3c3c] w-full">
     <div className="mb-4">
       <label htmlFor="name" className="block mb-2 text-sm font-medium">
@@ -101,4 +108,4 @@ const ContactForm = ({ formData, errors, isLoading, submitStatus, handleChange, 
   </div>
 );
 
-export default ContactForm; 
+export default ContactForm;

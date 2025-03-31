@@ -14,7 +14,7 @@ export default function HoverShimmer() {
         #a78bfa44 20%,
         #c084fc44 35%,
         #a78bfa44 50%,
-        transparent 80%)`
+        transparent 80%)`,
   );
 
   return (
@@ -29,4 +29,4 @@ export default function HoverShimmer() {
       <div className="w-full h-full rounded-md bg-[#1e1e1e]" />
     </motion.div>
   );
-} 
+}

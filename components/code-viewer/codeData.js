@@ -26,4 +26,4 @@ function intro() {
   "Finding new places to eat at",
   "Watching Survivor"
 ];`,
-}; 
+};

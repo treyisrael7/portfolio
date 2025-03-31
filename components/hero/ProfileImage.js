@@ -18,4 +18,4 @@ export default function ProfileImage() {
       />
     </motion.div>
   );
-} 
+}

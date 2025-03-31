@@ -19,7 +19,8 @@ export default function Navbar() {
         if (section) {
           const rect = section.getBoundingClientRect();
           const total = rect.height;
-          const visible = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+          const visible =
+            Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
           const percentage = visible / total;
 
           if (percentage > maxVisibility) {
@@ -49,7 +50,7 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between max-w-6xl mx-auto">
         {/* Logo / Name */}
-        <motion.div 
+        <motion.div
           className="flex items-center gap-2 text-2xl font-bold text-white hover:text-[#a78bfa] transition duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -74,12 +75,12 @@ export default function Navbar() {
                 initial={false}
                 animate={{
                   width: activeSection === section ? "100%" : "0%",
-                  opacity: activeSection === section ? 1 : 0
+                  opacity: activeSection === section ? 1 : 0,
                 }}
                 transition={{
                   type: "spring",
                   stiffness: 300,
-                  damping: 30
+                  damping: 30,
                 }}
               />
             </motion.a>
@@ -125,12 +126,12 @@ export default function Navbar() {
                   initial={false}
                   animate={{
                     width: activeSection === section ? "100%" : "0%",
-                    opacity: activeSection === section ? 1 : 0
+                    opacity: activeSection === section ? 1 : 0,
                   }}
                   transition={{
                     type: "spring",
                     stiffness: 300,
-                    damping: 30
+                    damping: 30,
                   }}
                 />
               </motion.a>

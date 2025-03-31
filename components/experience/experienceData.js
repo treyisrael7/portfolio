@@ -48,4 +48,4 @@ export const experiences = [
       "Created this portfolio with Next.js and Tailwind, with interactive sections and animations.",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
   },
-]; 
+];

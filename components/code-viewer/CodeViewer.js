@@ -30,11 +30,11 @@ export default function CodeViewer() {
   useEffect(() => {
     const handleKeyDown = (e) => {
       // Only handle keyboard shortcuts if we're focused within the code viewer
-      const isWithinCodeViewer = e.target.closest('#code-viewer');
+      const isWithinCodeViewer = e.target.closest("#code-viewer");
       if (!isWithinCodeViewer) return;
 
       // Cmd/Ctrl + W to close current file
-      if ((e.metaKey || e.ctrlKey) && e.key === 'w') {
+      if ((e.metaKey || e.ctrlKey) && e.key === "w") {
         e.preventDefault();
         if (activeFile) {
           handleCloseFile(activeFile);
@@ -51,8 +51,8 @@ export default function CodeViewer() {
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [activeFile, openFiles]);
 
   const handleOpenFile = (file) => {
@@ -84,7 +84,7 @@ export default function CodeViewer() {
       viewport={{ once: true, margin: "-100px" }}
     >
       <div className="max-w-6xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -96,8 +96,8 @@ export default function CodeViewer() {
             A Little About Me
           </h2>
           <p className="text-gray-400 max-w-md">
-            Here&apos;s a peek into my background, education, and what I love doing
-            in life.
+            Here&apos;s a peek into my background, education, and what I love
+            doing in life.
           </p>
         </motion.div>
 
@@ -125,15 +125,12 @@ export default function CodeViewer() {
                 onFileClose={handleCloseFile}
                 onReorderTabs={handleReorderTabs}
               />
-              
-              <CodeEditor
-                activeFile={activeFile}
-                files={files}
-              />
+
+              <CodeEditor activeFile={activeFile} files={files} />
             </div>
           </div>
         </motion.div>
       </div>
     </motion.section>
   );
-} 
+}
