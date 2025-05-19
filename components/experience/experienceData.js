@@ -7,18 +7,18 @@ export const experiences = [
     tech: ["C#", "React", "TypeScript", "Azure DevOps", "Rancher Desktop"],
   },
   {
+    title: "Multi-Agent Path Planning",
+    date: "Research",
+    description:
+      "Benchmarked A*, Dijkstra, DQN, and A2C for multi-agent navigation, optimizing pathfinding speed and RL goal coverage in large-scale grid environments.",
+    tech: ["Python", "Reinforcement Learning", "NumPy", "PyTorch"],
+  },
+  {
     title: "Privacy Compliance in Software Development",
     date: "Research",
     description:
       "Researched privacy compliance in third-party apps using NLP, sentiment analysis, and static code tools to assess and improve user data protection.",
     tech: ["Python", "NLP", "API Development"],
-  },
-  {
-    title: "Anomaly Detection in Autonomous Vehicles",
-    date: "Research",
-    description:
-      "Developed RL agents in MetaDrive to improve autonomous driving stability, integrating trajectory prediction and multi-agent training for safer navigation.",
-    tech: ["Python", "MetaDrive Simulator", "Reinforcement Learning"],
   },
   {
     title: "CUSports API",
